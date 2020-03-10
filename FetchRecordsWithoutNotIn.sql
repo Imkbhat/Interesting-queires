@@ -23,3 +23,10 @@ insert into test_a(id) values
   SELECT * FROM test_a
   except
   SELECT * FROM test_b;
+  
+  Another way:
+-------------
+select a.id
+from test_a a
+left join test_b b on a.id = b.id
+where b.id is null;
